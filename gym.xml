@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gym SYSTEM "gym.dtd">
+<gym>
+    <name>PowerFit Gym</name>
+    <location>
+        <street>24 Fitness Avenue</street>
+        <city>Thessaloniki</city>
+    </location>
+
+    <membershipPlans>
+        <plan id="plan-basic" currency="EUR">
+            <planName>Basic</planName>
+            <monthlyPrice>30.00</monthlyPrice>
+            <benefits>
+                <benefit>Access to the fitness area</benefit>
+                <benefit>Locker room access</benefit>
+            </benefits>
+        </plan>
+        <plan id="plan-premium" currency="EUR">
+            <planName>Premium</planName>
+            <monthlyPrice>50.00</monthlyPrice>
+            <benefits>
+                <benefit>Access to the fitness area</benefit>
+                <benefit>Unlimited group classes</benefit>
+                <benefit>One fitness assessment per month</benefit>
+            </benefits>
+        </plan>
+    </membershipPlans>
+
+    <trainers>
+        <trainer id="trainer-anna">
+            <fullName>Anna Carter</fullName>
+            <specialty>Yoga and mobility</specialty>
+            <email>anna@example.com</email>
+        </trainer>
+        <trainer id="trainer-james">
+            <fullName>James Miller</fullName>
+            <specialty>Strength and conditioning</specialty>
+            <email>james@example.com</email>
+        </trainer>
+    </trainers>
+
+    <rooms>
+        <room id="room-studio">
+            <roomName>Studio A</roomName>
+            <capacity>20</capacity>
+        </room>
+        <room id="room-functional">
+            <roomName>Functional Training Room</roomName>
+            <capacity>15</capacity>
+        </room>
+    </rooms>
+
+    <members>
+        <member id="member-john" planRef="plan-basic">
+            <fullName>John Smith</fullName>
+            <age>25</age>
+            <email>john@example.com</email>
+            <joinedOn>2026-09-10</joinedOn>
+        </member>
+        <member id="member-emma" planRef="plan-premium">
+            <fullName>Emma Wilson</fullName>
+            <age>29</age>
+            <email>emma@example.com</email>
+            <joinedOn>2026-10-02</joinedOn>
+        </member>
+    </members>
+
+    <classes>
+        <class id="class-yoga" trainerRef="trainer-anna" level="beginner">
+            <className>Morning Yoga</className>
+            <durationMinutes>60</durationMinutes>
+            <description>Gentle yoga for flexibility and relaxation.</description>
+        </class>
+        <class id="class-hiit" trainerRef="trainer-james" level="intermediate">
+            <className>HIIT Training</className>
+            <durationMinutes>45</durationMinutes>
+            <description>High-intensity interval workout.</description>
+        </class>
+        <class id="class-strength" trainerRef="trainer-james" level="advanced">
+            <className>Strength Basics Plus</className>
+            <durationMinutes>60</durationMinutes>
+            <description>Progressive full-body resistance training.</description>
+        </class>
+    </classes>
+
+    <schedule>
+        <session id="session-1" classRef="class-yoga" roomRef="room-studio" day="Monday">
+            <startTime>09:00</startTime>
+            <endTime>10:00</endTime>
+        </session>
+        <session id="session-2" classRef="class-hiit" roomRef="room-functional" day="Tuesday">
+            <startTime>18:00</startTime>
+            <endTime>18:45</endTime>
+        </session>
+        <session id="session-3" classRef="class-strength" roomRef="room-functional" day="Thursday">
+            <startTime>19:00</startTime>
+            <endTime>20:00</endTime>
+        </session>
+        <session id="session-4" classRef="class-yoga" roomRef="room-studio" day="Saturday">
+            <startTime>10:00</startTime>
+            <endTime>11:00</endTime>
+        </session>
+    </schedule>
+</gym>

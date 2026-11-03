@@ -1,0 +1,54 @@
+<!-- DTD for PowerFit Gym Management System -->
+<!ELEMENT gym (name, location, membershipPlans, trainers, rooms, members, classes, schedule)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (street, city)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+
+<!ELEMENT membershipPlans (plan+)>
+<!ELEMENT plan (planName, monthlyPrice, benefits)>
+<!ATTLIST plan id ID #REQUIRED currency (EUR|USD) "EUR">
+<!ELEMENT planName (#PCDATA)>
+<!ELEMENT monthlyPrice (#PCDATA)>
+<!ELEMENT benefits (benefit+)>
+<!ELEMENT benefit (#PCDATA)>
+
+<!ELEMENT trainers (trainer+)>
+<!ELEMENT trainer (fullName, specialty, email)>
+<!ATTLIST trainer id ID #REQUIRED>
+<!ELEMENT fullName (#PCDATA)>
+<!ELEMENT specialty (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+<!ELEMENT rooms (room+)>
+<!ELEMENT room (roomName, capacity)>
+<!ATTLIST room id ID #REQUIRED>
+<!ELEMENT roomName (#PCDATA)>
+<!ELEMENT capacity (#PCDATA)>
+
+<!ELEMENT members (member+)>
+<!ELEMENT member (fullName, age, email, joinedOn)>
+<!ATTLIST member id ID #REQUIRED planRef IDREF #REQUIRED>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT joinedOn (#PCDATA)>
+
+<!ELEMENT classes (class+)>
+<!ELEMENT class (className, durationMinutes, description)>
+<!ATTLIST class
+    id ID #REQUIRED
+    trainerRef IDREF #REQUIRED
+    level (beginner|intermediate|advanced) #REQUIRED>
+<!ELEMENT className (#PCDATA)>
+<!ELEMENT durationMinutes (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT schedule (session+)>
+<!ELEMENT session (startTime, endTime)>
+<!ATTLIST session
+    id ID #REQUIRED
+    classRef IDREF #REQUIRED
+    roomRef IDREF #REQUIRED
+    day (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) #REQUIRED>
+<!ELEMENT startTime (#PCDATA)>
+<!ELEMENT endTime (#PCDATA)>
