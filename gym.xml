@@ -1,105 +1,353 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE gym SYSTEM "gym.dtd">
-<gym>
+<gym version="1.1">
     <name>PowerFit Gym</name>
+    <tagline>&gymSlogan;</tagline>
     <location>
         <street>24 Fitness Avenue</street>
         <city>Thessaloniki</city>
+        <postalCode>54622</postalCode>
     </location>
-
+    <contact>
+        <email>hello@powerfit.example</email>
+        <phone>+30 2310 555 010</phone>
+    </contact>
     <membershipPlans>
-        <plan id="plan-basic" currency="EUR">
+        <plan id="plan-basic" currency="EUR" accessLevel="gym">
             <planName>Basic</planName>
-            <monthlyPrice>30.00</monthlyPrice>
-            <benefits>
-                <benefit>Access to the fitness area</benefit>
+            <monthlyPrice billingPeriod="monthly">30.00</monthlyPrice>
+            <features>
+                <benefit>Fitness area access</benefit>
                 <benefit>Locker room access</benefit>
-            </benefits>
+                <limitation>Group classes not included</limitation>
+            </features>
         </plan>
-        <plan id="plan-premium" currency="EUR">
+        <plan id="plan-plus" currency="EUR" accessLevel="group">
+            <planName>Plus</planName>
+            <monthlyPrice billingPeriod="monthly">42.00</monthlyPrice>
+            <features>
+                <benefit>Fitness area access</benefit>
+                <benefit>Four group classes per week</benefit>
+                <limitation>Personal training not included</limitation>
+            </features>
+        </plan>
+        <plan id="plan-premium" currency="EUR" accessLevel="all">
             <planName>Premium</planName>
-            <monthlyPrice>50.00</monthlyPrice>
-            <benefits>
-                <benefit>Access to the fitness area</benefit>
+            <monthlyPrice billingPeriod="monthly">50.00</monthlyPrice>
+            <features>
                 <benefit>Unlimited group classes</benefit>
-                <benefit>One fitness assessment per month</benefit>
-            </benefits>
+                <benefit>Fitness area access</benefit>
+                <benefit>Monthly fitness assessment</benefit>
+            </features>
+        </plan>
+        <plan id="plan-student" currency="EUR" accessLevel="group">
+            <planName>Student</planName>
+            <monthlyPrice billingPeriod="monthly">25.00</monthlyPrice>
+            <features>
+                <benefit>Fitness area access</benefit>
+                <benefit>Two group classes per week</benefit>
+                <limitation>Student identification required</limitation>
+            </features>
         </plan>
     </membershipPlans>
-
     <trainers>
-        <trainer id="trainer-anna">
+        <trainer id="trainer-anna" employment="full-time">
             <fullName>Anna Carter</fullName>
             <specialty>Yoga and mobility</specialty>
-            <email>anna@example.com</email>
+            <email>anna@powerfit.example</email>
+            <phone>+30 2310 555 101</phone>
+            <certification>RYT 200 Yoga Teacher</certification>
+            <certification>First Aid</certification>
         </trainer>
-        <trainer id="trainer-james">
+        <trainer id="trainer-james" employment="full-time">
             <fullName>James Miller</fullName>
             <specialty>Strength and conditioning</specialty>
-            <email>james@example.com</email>
+            <email>james@powerfit.example</email>
+            <certification>Certified Strength Coach</certification>
+        </trainer>
+        <trainer id="trainer-maria" employment="part-time">
+            <fullName>Maria Lopez</fullName>
+            <specialty>Indoor cycling</specialty>
+            <email>maria@powerfit.example</email>
+            <phone>+30 2310 555 103</phone>
+            <certification>Indoor Cycling Instructor</certification>
+        </trainer>
+        <trainer id="trainer-david" employment="contract">
+            <fullName>David Brown</fullName>
+            <specialty>Functional fitness</specialty>
+            <email>david@powerfit.example</email>
+        </trainer>
+        <trainer id="trainer-sophia" employment="part-time">
+            <fullName>Sophia Reed</fullName>
+            <specialty>Pilates and recovery</specialty>
+            <email>sophia@powerfit.example</email>
+            <phone>+30 2310 555 105</phone>
+            <certification>Mat Pilates Instructor</certification>
+            <certification>Mobility Specialist</certification>
         </trainer>
     </trainers>
-
     <rooms>
-        <room id="room-studio">
+        <room id="room-studio" type="studio">
             <roomName>Studio A</roomName>
             <capacity>20</capacity>
+            <amenities>
+                <amenity>Yoga mats</amenity>
+                <amenity>Mirrors</amenity>
+            </amenities>
         </room>
-        <room id="room-functional">
+        <room id="room-functional" type="functional">
             <roomName>Functional Training Room</roomName>
             <capacity>15</capacity>
+            <amenities>
+                <amenity>Kettlebells</amenity>
+                <amenity>Resistance bands</amenity>
+            </amenities>
+        </room>
+        <room id="room-cycle" type="cycling">
+            <roomName>Cycling Studio</roomName>
+            <capacity>18</capacity>
+            <amenities>
+                <amenity>Stationary bikes</amenity>
+                <amenity>Audio system</amenity>
+            </amenities>
+        </room>
+        <room id="room-weights" type="weights">
+            <roomName>Strength Hall</roomName>
+            <capacity>16</capacity>
         </room>
     </rooms>
-
     <members>
-        <member id="member-john" planRef="plan-basic">
+        <member id="member-john" planRef="plan-basic" status="active">
             <fullName>John Smith</fullName>
             <age>25</age>
             <email>john@example.com</email>
+            <phone>+30 690 000 0101</phone>
             <joinedOn>2026-09-10</joinedOn>
+            <emergencyContact>
+                <fullName>Mark Smith</fullName>
+                <phone>+30 690 000 0201</phone>
+            </emergencyContact>
         </member>
-        <member id="member-emma" planRef="plan-premium">
+        <member id="member-emma" planRef="plan-premium" status="active">
             <fullName>Emma Wilson</fullName>
             <age>29</age>
             <email>emma@example.com</email>
             <joinedOn>2026-10-02</joinedOn>
+            <emergencyContact>
+                <fullName>Olivia Wilson</fullName>
+                <email>olivia@example.com</email>
+            </emergencyContact>
+        </member>
+        <member id="member-liam" planRef="plan-plus" status="active">
+            <fullName>Liam Johnson</fullName>
+            <age>34</age>
+            <email>liam@example.com</email>
+            <phone>+30 690 000 0103</phone>
+            <joinedOn>2026-08-14</joinedOn>
+        </member>
+        <member id="member-olivia" planRef="plan-student" status="active">
+            <fullName>Olivia Davis</fullName>
+            <age>22</age>
+            <email>olivia.d@example.com</email>
+            <joinedOn>2026-09-22</joinedOn>
+        </member>
+        <member id="member-noah" planRef="plan-premium" status="active">
+            <fullName>Noah Martin</fullName>
+            <age>31</age>
+            <email>noah@example.com</email>
+            <phone>+30 690 000 0105</phone>
+            <joinedOn>2026-07-05</joinedOn>
+        </member>
+        <member id="member-ava" planRef="plan-plus" status="active">
+            <fullName>Ava Thompson</fullName>
+            <age>27</age>
+            <email>ava@example.com</email>
+            <joinedOn>2026-10-11</joinedOn>
+            <emergencyContact>
+                <fullName>Emma Thompson</fullName>
+                <phone>+30 690 000 0206</phone>
+            </emergencyContact>
+        </member>
+        <member id="member-ethan" planRef="plan-basic" status="paused">
+            <fullName>Ethan Clark</fullName>
+            <age>41</age>
+            <email>ethan@example.com</email>
+            <phone>+30 690 000 0107</phone>
+            <joinedOn>2026-04-07</joinedOn>
+        </member>
+        <member id="member-mia" planRef="plan-student" status="active">
+            <fullName>Mia Garcia</fullName>
+            <age>24</age>
+            <email>mia@example.com</email>
+            <joinedOn>2026-09-06</joinedOn>
+        </member>
+        <member id="member-lucas" planRef="plan-premium" status="active">
+            <fullName>Lucas Moore</fullName>
+            <age>36</age>
+            <email>lucas@example.com</email>
+            <phone>+30 690 000 0109</phone>
+            <joinedOn>2026-05-20</joinedOn>
+        </member>
+        <member id="member-isabella" planRef="plan-plus" status="active">
+            <fullName>Isabella Hall</fullName>
+            <age>30</age>
+            <email>isabella@example.com</email>
+            <joinedOn>2026-08-18</joinedOn>
+            <emergencyContact>
+                <fullName>Sofia Hall</fullName>
+                <email>sofia.h@example.com</email>
+            </emergencyContact>
+        </member>
+        <member id="member-henry" planRef="plan-basic" status="cancelled">
+            <fullName>Henry Lee</fullName>
+            <age>45</age>
+            <email>henry@example.com</email>
+            <joinedOn>2026-01-09</joinedOn>
+        </member>
+        <member id="member-amelia" planRef="plan-premium" status="active">
+            <fullName>Amelia King</fullName>
+            <age>28</age>
+            <email>amelia@example.com</email>
+            <phone>+30 690 000 0112</phone>
+            <joinedOn>2026-10-19</joinedOn>
         </member>
     </members>
-
     <classes>
-        <class id="class-yoga" trainerRef="trainer-anna" level="beginner">
+        <class id="class-yoga" trainerRef="trainer-anna" level="beginner" category="yoga">
             <className>Morning Yoga</className>
-            <durationMinutes>60</durationMinutes>
+            <durationMinutes unit="minutes">60</durationMinutes>
             <description>Gentle yoga for flexibility and relaxation.</description>
+            <equipment>Yoga mat</equipment>
         </class>
-        <class id="class-hiit" trainerRef="trainer-james" level="intermediate">
+        <class id="class-hiit" trainerRef="trainer-james" level="intermediate" category="cardio">
             <className>HIIT Training</className>
-            <durationMinutes>45</durationMinutes>
-            <description>High-intensity interval workout.</description>
+            <durationMinutes unit="minutes">45</durationMinutes>
+            <description>High-intensity intervals combining cardio and strength.</description>
+            <equipment>Timer</equipment>
+            <equipment>Exercise mat</equipment>
         </class>
-        <class id="class-strength" trainerRef="trainer-james" level="advanced">
+        <class id="class-strength" trainerRef="trainer-james" level="advanced" category="strength">
             <className>Strength Basics Plus</className>
-            <durationMinutes>60</durationMinutes>
+            <durationMinutes unit="minutes">60</durationMinutes>
             <description>Progressive full-body resistance training.</description>
+            <equipment>Dumbbells</equipment>
+            <equipment>Barbell</equipment>
+        </class>
+        <class id="class-spin" trainerRef="trainer-maria" level="intermediate" category="cycling">
+            <className>Indoor Cycling</className>
+            <durationMinutes unit="minutes">45</durationMinutes>
+            <description>Rhythm-based cardiovascular cycling.</description>
+            <equipment>Stationary bike</equipment>
+        </class>
+        <class id="class-pilates" trainerRef="trainer-sophia" level="beginner" category="mobility">
+            <className>Pilates Flow</className>
+            <durationMinutes unit="minutes">50</durationMinutes>
+            <description>Core stability, posture and controlled movement.</description>
+            <equipment>Exercise mat</equipment>
+            <equipment>Pilates ring</equipment>
+        </class>
+        <class id="class-functional" trainerRef="trainer-david" level="intermediate" category="strength">
+            <className>Functional Circuit</className>
+            <durationMinutes unit="minutes">50</durationMinutes>
+            <description>Circuit training focused on everyday movement.</description>
+            <equipment>Kettlebell</equipment>
+            <equipment>Resistance band</equipment>
+        </class>
+        <class id="class-stretch" trainerRef="trainer-sophia" level="beginner" category="mobility">
+            <className>Recovery and Stretch</className>
+            <durationMinutes unit="minutes">40</durationMinutes>
+            <description>Mobility and recovery for all fitness levels.</description>
+        </class>
+        <class id="class-power" trainerRef="trainer-james" level="advanced" category="strength">
+            <className>Power Lifting</className>
+            <durationMinutes unit="minutes">75</durationMinutes>
+            <description>Technique-focused compound barbell lifts.</description>
+            <equipment>Barbell</equipment>
+            <equipment>Weight plates</equipment>
         </class>
     </classes>
-
     <schedule>
-        <session id="session-1" classRef="class-yoga" roomRef="room-studio" day="Monday">
+        <session id="session-01" classRef="class-yoga" roomRef="room-studio" day="Monday">
             <startTime>09:00</startTime>
             <endTime>10:00</endTime>
+            <registrations memberRefs="member-emma member-olivia member-mia"/>
+            <note>Bring a yoga mat if you have one.</note>
         </session>
-        <session id="session-2" classRef="class-hiit" roomRef="room-functional" day="Tuesday">
+        <session id="session-02" classRef="class-hiit" roomRef="room-functional" day="Monday">
             <startTime>18:00</startTime>
             <endTime>18:45</endTime>
+            <registrations memberRefs="member-liam member-noah member-ava"/>
         </session>
-        <session id="session-3" classRef="class-strength" roomRef="room-functional" day="Thursday">
+        <session id="session-03" classRef="class-spin" roomRef="room-cycle" day="Tuesday">
+            <startTime>08:00</startTime>
+            <endTime>08:45</endTime>
+            <registrations memberRefs="member-emma member-mia member-lucas"/>
+        </session>
+        <session id="session-04" classRef="class-strength" roomRef="room-weights" day="Tuesday">
+            <startTime>18:00</startTime>
+            <endTime>19:00</endTime>
+            <registrations memberRefs="member-noah member-lucas"/>
+        </session>
+        <session id="session-05" classRef="class-pilates" roomRef="room-studio" day="Wednesday">
+            <startTime>09:00</startTime>
+            <endTime>09:50</endTime>
+            <registrations memberRefs="member-olivia member-amelia member-isabella"/>
+        </session>
+        <session id="session-06" classRef="class-functional" roomRef="room-functional" day="Wednesday">
+            <startTime>17:30</startTime>
+            <endTime>18:20</endTime>
+            <registrations memberRefs="member-liam member-ava member-emma"/>
+        </session>
+        <session id="session-07" classRef="class-stretch" roomRef="room-studio" day="Thursday">
+            <startTime>08:00</startTime>
+            <endTime>08:40</endTime>
+            <registrations memberRefs="member-mia member-isabella"/>
+        </session>
+        <session id="session-08" classRef="class-power" roomRef="room-weights" day="Thursday">
             <startTime>19:00</startTime>
-            <endTime>20:00</endTime>
+            <endTime>20:15</endTime>
+            <registrations memberRefs="member-noah member-lucas"/>
+            <note>Prior lifting experience is recommended.</note>
         </session>
-        <session id="session-4" classRef="class-yoga" roomRef="room-studio" day="Saturday">
+        <session id="session-09" classRef="class-yoga" roomRef="room-studio" day="Friday">
+            <startTime>09:00</startTime>
+            <endTime>10:00</endTime>
+            <registrations memberRefs="member-emma member-amelia"/>
+        </session>
+        <session id="session-10" classRef="class-hiit" roomRef="room-functional" day="Friday">
+            <startTime>17:30</startTime>
+            <endTime>18:15</endTime>
+            <registrations memberRefs="member-liam member-noah"/>
+        </session>
+        <session id="session-11" classRef="class-spin" roomRef="room-cycle" day="Saturday">
+            <startTime>10:00</startTime>
+            <endTime>10:45</endTime>
+            <registrations memberRefs="member-olivia member-mia member-emma"/>
+        </session>
+        <session id="session-12" classRef="class-pilates" roomRef="room-studio" day="Saturday">
+            <startTime>11:00</startTime>
+            <endTime>11:50</endTime>
+            <registrations memberRefs="member-ava member-amelia"/>
+        </session>
+        <session id="session-13" classRef="class-functional" roomRef="room-functional" day="Monday">
+            <startTime>19:00</startTime>
+            <endTime>19:50</endTime>
+            <registrations memberRefs="member-isabella member-liam"/>
+        </session>
+        <session id="session-14" classRef="class-stretch" roomRef="room-studio" day="Tuesday">
+            <startTime>19:15</startTime>
+            <endTime>19:55</endTime>
+            <note>Open session; registration is available at reception.</note>
+        </session>
+        <session id="session-15" classRef="class-yoga" roomRef="room-studio" day="Thursday">
+            <startTime>17:00</startTime>
+            <endTime>18:00</endTime>
+            <registrations memberRefs="member-emma member-isabella"/>
+        </session>
+        <session id="session-16" classRef="class-strength" roomRef="room-weights" day="Sunday">
             <startTime>10:00</startTime>
             <endTime>11:00</endTime>
+            <registrations memberRefs="member-amelia member-noah"/>
         </session>
     </schedule>
 </gym>
