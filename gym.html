@@ -1,0 +1,846 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="PowerFit Gym XML/XSLT management dashboard">
+<title>PowerFit Gym | Management Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body><div class="site-shell">
+<header class="site-header"><a class="brand" href="#overview"><span class="brand-mark">PF</span><span><strong>PowerFit Gym</strong><small>Management Dashboard</small></span></a><nav aria-label="Primary navigation"><a href="#overview">Overview</a><a href="#plans">Plans</a><a href="#classes">Classes</a><a href="#schedule">Schedule</a><a href="#trainers">Trainers</a><a href="#members">Members</a><a href="#rooms">Rooms</a></nav></header><main><section class="hero" id="overview"><div>
+<p class="eyebrow">POWERFIT / MANAGEMENT SYSTEM <span class="dot">•</span> XML v1.1</p>
+<h1>Move better.<br><span>Manage smarter.</span>
+</h1>
+<p class="hero-intro">Train Strong. Live Well. Explore our members, instructors, membership plans and weekly class timetable in one place.</p>
+<div class="hero-actions">
+<a class="button" href="#schedule">Explore the schedule <span aria-hidden="true">→</span></a><a class="button button-outline" href="#classes">View classes</a>
+</div>
+</div>
+<div class="hero-panel">
+<p class="panel-kicker">AT A GLANCE</p>
+<div class="hero-panel-total">10<span>active members</span>
+</div>
+<div class="panel-divider"></div>
+<p>Based in <strong>Thessaloniki</strong></p>
+<p>24 Fitness Avenue, 54622</p>
+<p><a href="mailto:hello@powerfit.example">hello@powerfit.example</a></p>
+<p>+30 2310 555 010</p>
+</div></section><section class="stats" aria-label="Gym statistics"><div class="stat">
+<span class="stat-value">12</span><span class="stat-label">Total members</span>
+</div>
+<div class="stat">
+<span class="stat-value">5</span><span class="stat-label">Expert trainers</span>
+</div>
+<div class="stat">
+<span class="stat-value">8</span><span class="stat-label">Fitness classes</span>
+</div>
+<div class="stat">
+<span class="stat-value">16</span><span class="stat-label">Weekly sessions</span>
+</div></section><section class="section" id="plans"><div class="section-heading">
+<div>
+<p class="eyebrow">FLEXIBLE OPTIONS</p>
+<h2>Membership plans</h2>
+</div>
+<p>Choose the access level that fits your routine. All rates are shown per month.</p>
+</div>
+<div class="plan-grid">
+<article class="plan-card"><div class="card-top"><span class="tag">gym access</span></div>
+<h3>Basic</h3>
+<p class="plan-price">€30.00<span> / monthly</span></p>
+<ul class="feature-list">
+<li class="included">
+<span>✓</span>Fitness area access</li>
+<li class="included">
+<span>✓</span>Locker room access</li>
+<li class="limit">
+<span>–</span>Group classes not included</li>
+</ul>
+<div class="card-meta">Plan ID: <code>plan-basic</code>
+</div></article><article class="plan-card"><div class="card-top"><span class="tag">group access</span></div>
+<h3>Plus</h3>
+<p class="plan-price">€42.00<span> / monthly</span></p>
+<ul class="feature-list">
+<li class="included">
+<span>✓</span>Fitness area access</li>
+<li class="included">
+<span>✓</span>Four group classes per week</li>
+<li class="limit">
+<span>–</span>Personal training not included</li>
+</ul>
+<div class="card-meta">Plan ID: <code>plan-plus</code>
+</div></article><article class="plan-card"><div class="card-top">
+<span class="tag">all access</span><span class="featured-tag">MOST FLEXIBLE</span>
+</div>
+<h3>Premium</h3>
+<p class="plan-price">€50.00<span> / monthly</span></p>
+<ul class="feature-list">
+<li class="included">
+<span>✓</span>Unlimited group classes</li>
+<li class="included">
+<span>✓</span>Fitness area access</li>
+<li class="included">
+<span>✓</span>Monthly fitness assessment</li>
+</ul>
+<div class="card-meta">Plan ID: <code>plan-premium</code>
+</div></article><article class="plan-card"><div class="card-top"><span class="tag">group access</span></div>
+<h3>Student</h3>
+<p class="plan-price">€25.00<span> / monthly</span></p>
+<ul class="feature-list">
+<li class="included">
+<span>✓</span>Fitness area access</li>
+<li class="included">
+<span>✓</span>Two group classes per week</li>
+<li class="limit">
+<span>–</span>Student identification required</li>
+</ul>
+<div class="card-meta">Plan ID: <code>plan-student</code>
+</div></article>
+</div>
+<div class="insight">Average monthly list price: <strong>EUR 36.75</strong>
+</div></section><section class="section" id="classes"><div class="section-heading">
+<div>
+<p class="eyebrow">FIND YOUR WORKOUT</p>
+<h2>Explore our classes</h2>
+</div>
+<p>Every class includes an assigned trainer, fitness level and equipment requirements.</p>
+</div>
+<div class="class-grid">
+<article class="class-card"><div class="card-top">
+<span class="tag">strength</span><span class="level level-intermediate">intermediate</span>
+</div>
+<h3>Functional Circuit</h3>
+<p class="body-copy">Circuit training focused on everyday movement.</p>
+<div class="detail-row">
+<span>Duration</span><strong>50minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>David Brown</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>2</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul>
+<li>Kettlebell</li>
+<li>Resistance band</li>
+</ul>
+</div>
+<p class="idline">Class ID: class-functional</p></article><article class="class-card"><div class="card-top">
+<span class="tag">cardio</span><span class="level level-intermediate">intermediate</span>
+</div>
+<h3>HIIT Training</h3>
+<p class="body-copy">High-intensity intervals combining cardio and strength.</p>
+<div class="detail-row">
+<span>Duration</span><strong>45minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>James Miller</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>2</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul>
+<li>Timer</li>
+<li>Exercise mat</li>
+</ul>
+</div>
+<p class="idline">Class ID: class-hiit</p></article><article class="class-card"><div class="card-top">
+<span class="tag">cycling</span><span class="level level-intermediate">intermediate</span>
+</div>
+<h3>Indoor Cycling</h3>
+<p class="body-copy">Rhythm-based cardiovascular cycling.</p>
+<div class="detail-row">
+<span>Duration</span><strong>45minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>Maria Lopez</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>2</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul><li>Stationary bike</li></ul>
+</div>
+<p class="idline">Class ID: class-spin</p></article><article class="class-card"><div class="card-top">
+<span class="tag">yoga</span><span class="level level-beginner">beginner</span>
+</div>
+<h3>Morning Yoga</h3>
+<p class="body-copy">Gentle yoga for flexibility and relaxation.</p>
+<div class="detail-row">
+<span>Duration</span><strong>60minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>Anna Carter</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>3</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul><li>Yoga mat</li></ul>
+</div>
+<p class="idline">Class ID: class-yoga</p></article><article class="class-card"><div class="card-top">
+<span class="tag">mobility</span><span class="level level-beginner">beginner</span>
+</div>
+<h3>Pilates Flow</h3>
+<p class="body-copy">Core stability, posture and controlled movement.</p>
+<div class="detail-row">
+<span>Duration</span><strong>50minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>Sophia Reed</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>2</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul>
+<li>Exercise mat</li>
+<li>Pilates ring</li>
+</ul>
+</div>
+<p class="idline">Class ID: class-pilates</p></article><article class="class-card"><div class="card-top">
+<span class="tag">strength</span><span class="level level-advanced">advanced</span>
+</div>
+<h3>Power Lifting</h3>
+<p class="body-copy">Technique-focused compound barbell lifts.</p>
+<div class="detail-row">
+<span>Duration</span><strong>75minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>James Miller</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>1</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul>
+<li>Barbell</li>
+<li>Weight plates</li>
+</ul>
+</div>
+<p class="idline">Class ID: class-power</p></article><article class="class-card"><div class="card-top">
+<span class="tag">mobility</span><span class="level level-beginner">beginner</span>
+</div>
+<h3>Recovery and Stretch</h3>
+<p class="body-copy">Mobility and recovery for all fitness levels.</p>
+<div class="detail-row">
+<span>Duration</span><strong>40minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>Sophia Reed</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>2</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><p>No special equipment listed.</p>
+</div>
+<p class="idline">Class ID: class-stretch</p></article><article class="class-card"><div class="card-top">
+<span class="tag">strength</span><span class="level level-advanced">advanced</span>
+</div>
+<h3>Strength Basics Plus</h3>
+<p class="body-copy">Progressive full-body resistance training.</p>
+<div class="detail-row">
+<span>Duration</span><strong>60minutes</strong>
+</div>
+<div class="detail-row">
+<span>Trainer</span><strong>James Miller</strong>
+</div>
+<div class="detail-row">
+<span>Sessions / week</span><strong>2</strong>
+</div>
+<div class="equipment">
+<strong>Equipment</strong><ul>
+<li>Dumbbells</li>
+<li>Barbell</li>
+</ul>
+</div>
+<p class="idline">Class ID: class-strength</p></article>
+</div></section><section class="section" id="schedule"><div class="section-heading">
+<div>
+<p class="eyebrow">EVERY WEEK</p>
+<h2>Class timetable</h2>
+</div>
+<p>Sessions are displayed in weekday and start-time order, with participant names resolved from member IDs.</p>
+</div>
+<div class="table-scroll"><table class="data-table schedule-table">
+<thead><tr>
+<th>Day / time</th>
+<th>Class &amp; trainer</th>
+<th>Room</th>
+<th>Registrations</th>
+<th>Details</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+<strong>Monday</strong><span class="table-muted">09:00–10:00</span>
+</td>
+<td>
+<strong>Morning Yoga</strong><span class="table-muted">Anna Carter</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">3 / 20</span><span class="table-muted">Emma Wilson, Olivia Davis, Mia Garcia</span>
+</td>
+<td>
+<span class="idline">session-01</span><span class="table-muted">Bring a yoga mat if you have one.</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Monday</strong><span class="table-muted">18:00–18:45</span>
+</td>
+<td>
+<strong>HIIT Training</strong><span class="table-muted">James Miller</span>
+</td>
+<td>
+<strong>Functional Training Room</strong><span class="table-muted">functional</span>
+</td>
+<td>
+<span class="count-badge">3 / 15</span><span class="table-muted">Liam Johnson, Noah Martin, Ava Thompson</span>
+</td>
+<td><span class="idline">session-02</span></td>
+</tr>
+<tr>
+<td>
+<strong>Monday</strong><span class="table-muted">19:00–19:50</span>
+</td>
+<td>
+<strong>Functional Circuit</strong><span class="table-muted">David Brown</span>
+</td>
+<td>
+<strong>Functional Training Room</strong><span class="table-muted">functional</span>
+</td>
+<td>
+<span class="count-badge">2 / 15</span><span class="table-muted">Isabella Hall, Liam Johnson</span>
+</td>
+<td><span class="idline">session-13</span></td>
+</tr>
+<tr>
+<td>
+<strong>Tuesday</strong><span class="table-muted">08:00–08:45</span>
+</td>
+<td>
+<strong>Indoor Cycling</strong><span class="table-muted">Maria Lopez</span>
+</td>
+<td>
+<strong>Cycling Studio</strong><span class="table-muted">cycling</span>
+</td>
+<td>
+<span class="count-badge">3 / 18</span><span class="table-muted">Emma Wilson, Mia Garcia, Lucas Moore</span>
+</td>
+<td><span class="idline">session-03</span></td>
+</tr>
+<tr>
+<td>
+<strong>Tuesday</strong><span class="table-muted">18:00–19:00</span>
+</td>
+<td>
+<strong>Strength Basics Plus</strong><span class="table-muted">James Miller</span>
+</td>
+<td>
+<strong>Strength Hall</strong><span class="table-muted">weights</span>
+</td>
+<td>
+<span class="count-badge">2 / 16</span><span class="table-muted">Noah Martin, Lucas Moore</span>
+</td>
+<td><span class="idline">session-04</span></td>
+</tr>
+<tr>
+<td>
+<strong>Tuesday</strong><span class="table-muted">19:15–19:55</span>
+</td>
+<td>
+<strong>Recovery and Stretch</strong><span class="table-muted">Sophia Reed</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">0 / 20</span><span class="table-muted">No registered members</span>
+</td>
+<td>
+<span class="idline">session-14</span><span class="table-muted">Open session; registration is available at reception.</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Wednesday</strong><span class="table-muted">09:00–09:50</span>
+</td>
+<td>
+<strong>Pilates Flow</strong><span class="table-muted">Sophia Reed</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">3 / 20</span><span class="table-muted">Olivia Davis, Amelia King, Isabella Hall</span>
+</td>
+<td><span class="idline">session-05</span></td>
+</tr>
+<tr>
+<td>
+<strong>Wednesday</strong><span class="table-muted">17:30–18:20</span>
+</td>
+<td>
+<strong>Functional Circuit</strong><span class="table-muted">David Brown</span>
+</td>
+<td>
+<strong>Functional Training Room</strong><span class="table-muted">functional</span>
+</td>
+<td>
+<span class="count-badge">3 / 15</span><span class="table-muted">Liam Johnson, Ava Thompson, Emma Wilson</span>
+</td>
+<td><span class="idline">session-06</span></td>
+</tr>
+<tr>
+<td>
+<strong>Thursday</strong><span class="table-muted">08:00–08:40</span>
+</td>
+<td>
+<strong>Recovery and Stretch</strong><span class="table-muted">Sophia Reed</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">2 / 20</span><span class="table-muted">Mia Garcia, Isabella Hall</span>
+</td>
+<td><span class="idline">session-07</span></td>
+</tr>
+<tr>
+<td>
+<strong>Thursday</strong><span class="table-muted">17:00–18:00</span>
+</td>
+<td>
+<strong>Morning Yoga</strong><span class="table-muted">Anna Carter</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">2 / 20</span><span class="table-muted">Emma Wilson, Isabella Hall</span>
+</td>
+<td><span class="idline">session-15</span></td>
+</tr>
+<tr>
+<td>
+<strong>Thursday</strong><span class="table-muted">19:00–20:15</span>
+</td>
+<td>
+<strong>Power Lifting</strong><span class="table-muted">James Miller</span>
+</td>
+<td>
+<strong>Strength Hall</strong><span class="table-muted">weights</span>
+</td>
+<td>
+<span class="count-badge">2 / 16</span><span class="table-muted">Noah Martin, Lucas Moore</span>
+</td>
+<td>
+<span class="idline">session-08</span><span class="table-muted">Prior lifting experience is recommended.</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Friday</strong><span class="table-muted">09:00–10:00</span>
+</td>
+<td>
+<strong>Morning Yoga</strong><span class="table-muted">Anna Carter</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">2 / 20</span><span class="table-muted">Emma Wilson, Amelia King</span>
+</td>
+<td><span class="idline">session-09</span></td>
+</tr>
+<tr>
+<td>
+<strong>Friday</strong><span class="table-muted">17:30–18:15</span>
+</td>
+<td>
+<strong>HIIT Training</strong><span class="table-muted">James Miller</span>
+</td>
+<td>
+<strong>Functional Training Room</strong><span class="table-muted">functional</span>
+</td>
+<td>
+<span class="count-badge">2 / 15</span><span class="table-muted">Liam Johnson, Noah Martin</span>
+</td>
+<td><span class="idline">session-10</span></td>
+</tr>
+<tr>
+<td>
+<strong>Saturday</strong><span class="table-muted">10:00–10:45</span>
+</td>
+<td>
+<strong>Indoor Cycling</strong><span class="table-muted">Maria Lopez</span>
+</td>
+<td>
+<strong>Cycling Studio</strong><span class="table-muted">cycling</span>
+</td>
+<td>
+<span class="count-badge">3 / 18</span><span class="table-muted">Olivia Davis, Mia Garcia, Emma Wilson</span>
+</td>
+<td><span class="idline">session-11</span></td>
+</tr>
+<tr>
+<td>
+<strong>Saturday</strong><span class="table-muted">11:00–11:50</span>
+</td>
+<td>
+<strong>Pilates Flow</strong><span class="table-muted">Sophia Reed</span>
+</td>
+<td>
+<strong>Studio A</strong><span class="table-muted">studio</span>
+</td>
+<td>
+<span class="count-badge">2 / 20</span><span class="table-muted">Ava Thompson, Amelia King</span>
+</td>
+<td><span class="idline">session-12</span></td>
+</tr>
+<tr>
+<td>
+<strong>Sunday</strong><span class="table-muted">10:00–11:00</span>
+</td>
+<td>
+<strong>Strength Basics Plus</strong><span class="table-muted">James Miller</span>
+</td>
+<td>
+<strong>Strength Hall</strong><span class="table-muted">weights</span>
+</td>
+<td>
+<span class="count-badge">2 / 16</span><span class="table-muted">Amelia King, Noah Martin</span>
+</td>
+<td><span class="idline">session-16</span></td>
+</tr>
+</tbody>
+</table></div></section><section class="section" id="trainers"><div class="section-heading">
+<div>
+<p class="eyebrow">MEET THE TEAM</p>
+<h2>Our trainers</h2>
+</div>
+<p>Professional specialties, employment types, certifications and contact information.</p>
+</div>
+<div class="trainer-grid">
+<article class="trainer-card"><div class="trainer-top">
+<span class="avatar">A</span><span class="tag">full-time</span>
+</div>
+<h3>Anna Carter</h3>
+<p class="accent-text">Yoga and mobility</p>
+<p><a href="mailto:anna@powerfit.example">anna@powerfit.example</a></p>
+<p>+30 2310 555 101</p>
+<div class="equipment">
+<strong>Certifications</strong><ul>
+<li>RYT 200 Yoga Teacher</li>
+<li>First Aid</li>
+</ul>
+</div>
+<p class="idline">Trainer ID: trainer-anna</p></article><article class="trainer-card"><div class="trainer-top">
+<span class="avatar">D</span><span class="tag">contract</span>
+</div>
+<h3>David Brown</h3>
+<p class="accent-text">Functional fitness</p>
+<p><a href="mailto:david@powerfit.example">david@powerfit.example</a></p>
+<div class="equipment">
+<strong>Certifications</strong><p>No certifications listed.</p>
+</div>
+<p class="idline">Trainer ID: trainer-david</p></article><article class="trainer-card"><div class="trainer-top">
+<span class="avatar">J</span><span class="tag">full-time</span>
+</div>
+<h3>James Miller</h3>
+<p class="accent-text">Strength and conditioning</p>
+<p><a href="mailto:james@powerfit.example">james@powerfit.example</a></p>
+<div class="equipment">
+<strong>Certifications</strong><ul><li>Certified Strength Coach</li></ul>
+</div>
+<p class="idline">Trainer ID: trainer-james</p></article><article class="trainer-card"><div class="trainer-top">
+<span class="avatar">M</span><span class="tag">part-time</span>
+</div>
+<h3>Maria Lopez</h3>
+<p class="accent-text">Indoor cycling</p>
+<p><a href="mailto:maria@powerfit.example">maria@powerfit.example</a></p>
+<p>+30 2310 555 103</p>
+<div class="equipment">
+<strong>Certifications</strong><ul><li>Indoor Cycling Instructor</li></ul>
+</div>
+<p class="idline">Trainer ID: trainer-maria</p></article><article class="trainer-card"><div class="trainer-top">
+<span class="avatar">S</span><span class="tag">part-time</span>
+</div>
+<h3>Sophia Reed</h3>
+<p class="accent-text">Pilates and recovery</p>
+<p><a href="mailto:sophia@powerfit.example">sophia@powerfit.example</a></p>
+<p>+30 2310 555 105</p>
+<div class="equipment">
+<strong>Certifications</strong><ul>
+<li>Mat Pilates Instructor</li>
+<li>Mobility Specialist</li>
+</ul>
+</div>
+<p class="idline">Trainer ID: trainer-sophia</p></article>
+</div></section><section class="section" id="members"><div class="section-heading">
+<div>
+<p class="eyebrow">MEMBER DIRECTORY</p>
+<h2>Members &amp; subscriptions</h2>
+</div>
+<p>10 active, 1 paused, and 1 cancelled memberships.</p>
+</div>
+<div class="table-scroll"><table class="data-table">
+<thead><tr>
+<th>Member</th>
+<th>Age / joined</th>
+<th>Membership</th>
+<th>Status</th>
+<th>Contact</th>
+<th>Emergency contact</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+<strong>Amelia King</strong><span class="table-muted idline">member-amelia</span>
+</td>
+<td>
+<strong>28 years</strong><span class="table-muted">Joined 2026-10-19</span>
+</td>
+<td>
+<strong>Premium</strong><span class="table-muted">plan-premium</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td>
+<a href="mailto:amelia@example.com">amelia@example.com</a><span class="table-muted">+30 690 000 0112</span>
+</td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Ava Thompson</strong><span class="table-muted idline">member-ava</span>
+</td>
+<td>
+<strong>27 years</strong><span class="table-muted">Joined 2026-10-11</span>
+</td>
+<td>
+<strong>Plus</strong><span class="table-muted">plan-plus</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td><a href="mailto:ava@example.com">ava@example.com</a></td>
+<td>
+<strong>Emma Thompson</strong><span class="table-muted">+30 690 000 0206</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Emma Wilson</strong><span class="table-muted idline">member-emma</span>
+</td>
+<td>
+<strong>29 years</strong><span class="table-muted">Joined 2026-10-02</span>
+</td>
+<td>
+<strong>Premium</strong><span class="table-muted">plan-premium</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td><a href="mailto:emma@example.com">emma@example.com</a></td>
+<td>
+<strong>Olivia Wilson</strong><span class="table-muted">olivia@example.com</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Ethan Clark</strong><span class="table-muted idline">member-ethan</span>
+</td>
+<td>
+<strong>41 years</strong><span class="table-muted">Joined 2026-04-07</span>
+</td>
+<td>
+<strong>Basic</strong><span class="table-muted">plan-basic</span>
+</td>
+<td><span class="status status-paused">paused</span></td>
+<td>
+<a href="mailto:ethan@example.com">ethan@example.com</a><span class="table-muted">+30 690 000 0107</span>
+</td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Henry Lee</strong><span class="table-muted idline">member-henry</span>
+</td>
+<td>
+<strong>45 years</strong><span class="table-muted">Joined 2026-01-09</span>
+</td>
+<td>
+<strong>Basic</strong><span class="table-muted">plan-basic</span>
+</td>
+<td><span class="status status-cancelled">cancelled</span></td>
+<td><a href="mailto:henry@example.com">henry@example.com</a></td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Isabella Hall</strong><span class="table-muted idline">member-isabella</span>
+</td>
+<td>
+<strong>30 years</strong><span class="table-muted">Joined 2026-08-18</span>
+</td>
+<td>
+<strong>Plus</strong><span class="table-muted">plan-plus</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td><a href="mailto:isabella@example.com">isabella@example.com</a></td>
+<td>
+<strong>Sofia Hall</strong><span class="table-muted">sofia.h@example.com</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>John Smith</strong><span class="table-muted idline">member-john</span>
+</td>
+<td>
+<strong>25 years</strong><span class="table-muted">Joined 2026-09-10</span>
+</td>
+<td>
+<strong>Basic</strong><span class="table-muted">plan-basic</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td>
+<a href="mailto:john@example.com">john@example.com</a><span class="table-muted">+30 690 000 0101</span>
+</td>
+<td>
+<strong>Mark Smith</strong><span class="table-muted">+30 690 000 0201</span>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Liam Johnson</strong><span class="table-muted idline">member-liam</span>
+</td>
+<td>
+<strong>34 years</strong><span class="table-muted">Joined 2026-08-14</span>
+</td>
+<td>
+<strong>Plus</strong><span class="table-muted">plan-plus</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td>
+<a href="mailto:liam@example.com">liam@example.com</a><span class="table-muted">+30 690 000 0103</span>
+</td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Lucas Moore</strong><span class="table-muted idline">member-lucas</span>
+</td>
+<td>
+<strong>36 years</strong><span class="table-muted">Joined 2026-05-20</span>
+</td>
+<td>
+<strong>Premium</strong><span class="table-muted">plan-premium</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td>
+<a href="mailto:lucas@example.com">lucas@example.com</a><span class="table-muted">+30 690 000 0109</span>
+</td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Mia Garcia</strong><span class="table-muted idline">member-mia</span>
+</td>
+<td>
+<strong>24 years</strong><span class="table-muted">Joined 2026-09-06</span>
+</td>
+<td>
+<strong>Student</strong><span class="table-muted">plan-student</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td><a href="mailto:mia@example.com">mia@example.com</a></td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Noah Martin</strong><span class="table-muted idline">member-noah</span>
+</td>
+<td>
+<strong>31 years</strong><span class="table-muted">Joined 2026-07-05</span>
+</td>
+<td>
+<strong>Premium</strong><span class="table-muted">plan-premium</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td>
+<a href="mailto:noah@example.com">noah@example.com</a><span class="table-muted">+30 690 000 0105</span>
+</td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+<tr>
+<td>
+<strong>Olivia Davis</strong><span class="table-muted idline">member-olivia</span>
+</td>
+<td>
+<strong>22 years</strong><span class="table-muted">Joined 2026-09-22</span>
+</td>
+<td>
+<strong>Student</strong><span class="table-muted">plan-student</span>
+</td>
+<td><span class="status status-active">active</span></td>
+<td><a href="mailto:olivia.d@example.com">olivia.d@example.com</a></td>
+<td><span class="table-muted">Not provided</span></td>
+</tr>
+</tbody>
+</table></div>
+<p class="footnote">Directory entries are fictional demonstration data. A real-world system should protect personal and emergency contact details through access controls.</p></section><section class="section" id="rooms"><div class="section-heading">
+<div>
+<p class="eyebrow">THE SPACE</p>
+<h2>Facilities &amp; rooms</h2>
+</div>
+<p>4 training spaces with a combined capacity of 69 people (room capacities, not simultaneous gym occupancy).</p>
+</div>
+<div class="room-grid">
+<article class="room-card"><div class="card-top">
+<span class="tag">studio</span><span class="idline">room-studio</span>
+</div>
+<h3>Studio A</h3>
+<p class="room-capacity">20<span> person capacity</span></p>
+<div class="equipment">
+<strong>Amenities</strong><ul>
+<li>Yoga mats</li>
+<li>Mirrors</li>
+</ul>
+</div></article><article class="room-card"><div class="card-top">
+<span class="tag">functional</span><span class="idline">room-functional</span>
+</div>
+<h3>Functional Training Room</h3>
+<p class="room-capacity">15<span> person capacity</span></p>
+<div class="equipment">
+<strong>Amenities</strong><ul>
+<li>Kettlebells</li>
+<li>Resistance bands</li>
+</ul>
+</div></article><article class="room-card"><div class="card-top">
+<span class="tag">cycling</span><span class="idline">room-cycle</span>
+</div>
+<h3>Cycling Studio</h3>
+<p class="room-capacity">18<span> person capacity</span></p>
+<div class="equipment">
+<strong>Amenities</strong><ul>
+<li>Stationary bikes</li>
+<li>Audio system</li>
+</ul>
+</div></article><article class="room-card"><div class="card-top">
+<span class="tag">weights</span><span class="idline">room-weights</span>
+</div>
+<h3>Strength Hall</h3>
+<p class="room-capacity">16<span> person capacity</span></p>
+<div class="equipment">
+<strong>Amenities</strong><p>No additional amenities listed.</p>
+</div></article>
+</div></section></main><footer class="footer"><div>
+<strong>PowerFit Gym</strong><span>Train Strong. Live Well.</span>
+</div>
+<p>XML 1.0 • DTD • XSLT 1.0 • HTML / CSS</p>
+<a href="#overview">Back to top ↑</a></footer>
+</div></body>
+</html>
