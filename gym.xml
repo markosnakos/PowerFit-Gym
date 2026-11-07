@@ -281,7 +281,7 @@
         <session id="session-03" classRef="class-spin" roomRef="room-cycle" day="Tuesday">
             <startTime>08:00</startTime>
             <endTime>08:45</endTime>
-            <registrations memberRefs="member-emma member-mia member-lucas"/>
+            <registrations memberRefs="member-emma member-lucas"/>
         </session>
         <session id="session-04" classRef="class-strength" roomRef="room-weights" day="Tuesday">
             <startTime>18:00</startTime>
@@ -322,7 +322,7 @@
         <session id="session-11" classRef="class-spin" roomRef="room-cycle" day="Saturday">
             <startTime>10:00</startTime>
             <endTime>10:45</endTime>
-            <registrations memberRefs="member-olivia member-mia member-emma"/>
+            <registrations memberRefs="member-emma"/>
         </session>
         <session id="session-12" classRef="class-pilates" roomRef="room-studio" day="Saturday">
             <startTime>11:00</startTime>
