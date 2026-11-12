@@ -22,6 +22,7 @@
         <meta name="description" content="PowerFit Gym XML/XSLT management dashboard"/>
         <title><xsl:value-of select="name"/> | Management Dashboard</title>
         <link rel="stylesheet" href="style.css"/>
+        <script src="navigation.js" defer="defer"></script>
       </head>
       <body>
         <div class="site-shell">
