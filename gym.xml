@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type="text/xsl" href="gym.xsl"?>
 <!DOCTYPE gym SYSTEM "gym.dtd">
 <gym version="1.1">
     <name>PowerFit Gym</name>
@@ -13,9 +14,9 @@
         <phone>+30 2310 555 010</phone>
     </contact>
     <membershipPlans>
-        <plan id="plan-basic" currency="EUR" accessLevel="gym">
+        <plan id="plan-basic" accessLevel="gym">
             <planName>Basic</planName>
-            <monthlyPrice billingPeriod="monthly">30.00</monthlyPrice>
+            <monthlyPrice>30.00</monthlyPrice>
             <features>
                 <benefit>Fitness area access</benefit>
                 <benefit>Locker room access</benefit>
@@ -87,7 +88,7 @@
         </trainer>
     </trainers>
     <rooms>
-        <room id="room-studio" type="studio">
+        <room id="room-studio" type="studio" code="STU-A">
             <roomName>Studio A</roomName>
             <capacity>20</capacity>
             <amenities>
@@ -95,7 +96,7 @@
                 <amenity>Mirrors</amenity>
             </amenities>
         </room>
-        <room id="room-functional" type="functional">
+        <room id="room-functional" type="functional" code="FUNC">
             <roomName>Functional Training Room</roomName>
             <capacity>15</capacity>
             <amenities>
@@ -103,7 +104,7 @@
                 <amenity>Resistance bands</amenity>
             </amenities>
         </room>
-        <room id="room-cycle" type="cycling">
+        <room id="room-cycle" type="cycling" code="CYCLE">
             <roomName>Cycling Studio</roomName>
             <capacity>18</capacity>
             <amenities>
@@ -117,7 +118,7 @@
         </room>
     </rooms>
     <members>
-        <member id="member-john" planRef="plan-basic" status="active">
+        <member id="member-john" planRef="plan-basic">
             <fullName>John Smith</fullName>
             <age>25</age>
             <email>john@example.com</email>
@@ -213,13 +214,13 @@
         </member>
     </members>
     <classes>
-        <class id="class-yoga" trainerRef="trainer-anna" level="beginner" category="yoga">
+        <class id="class-yoga" trainerRef="trainer-anna" level="beginner" category="yoga" tags="low-impact mat-based">
             <className>Morning Yoga</className>
-            <durationMinutes unit="minutes">60</durationMinutes>
-            <description>Gentle yoga for flexibility and relaxation.</description>
+            <durationMinutes>60</durationMinutes>
+            <description>Gentle yoga for <em>flexibility and relaxation</em>.</description>
             <equipment>Yoga mat</equipment>
         </class>
-        <class id="class-hiit" trainerRef="trainer-james" level="intermediate" category="cardio">
+        <class id="class-hiit" trainerRef="trainer-james" level="intermediate" category="cardio" tags="intervals">
             <className>HIIT Training</className>
             <durationMinutes unit="minutes">45</durationMinutes>
             <description>High-intensity intervals combining cardio and strength.</description>
@@ -307,7 +308,7 @@
             <startTime>19:00</startTime>
             <endTime>20:15</endTime>
             <registrations memberRefs="member-noah member-lucas"/>
-            <note>Prior lifting experience is recommended.</note>
+            <note><strong>Prior lifting experience</strong> is recommended.</note>
         </session>
         <session id="session-09" classRef="class-yoga" roomRef="room-studio" day="Friday">
             <startTime>09:00</startTime>
@@ -337,7 +338,7 @@
         <session id="session-14" classRef="class-stretch" roomRef="room-studio" day="Tuesday">
             <startTime>19:15</startTime>
             <endTime>19:55</endTime>
-            <note>Open session; registration is available at reception.</note>
+            <note>Open session. Registration is available at reception.</note>
         </session>
         <session id="session-15" classRef="class-yoga" roomRef="room-studio" day="Thursday">
             <startTime>17:00</startTime>
@@ -350,4 +351,32 @@
             <registrations memberRefs="member-amelia member-noah"/>
         </session>
     </schedule>
+    <memberDesk>
+        <announcements>
+            <announcement id="announcement-welcome" attachments="classCheckIn sharedEquipment">
+                <announcementTitle>Welcome to the member desk</announcementTitle>
+                <announcementBody>&frontDesk;</announcementBody>
+            </announcement>
+            <announcement id="announcement-equipment" attachments="sharedEquipment">
+                <announcementTitle>Ready for the next class</announcementTitle>
+                <announcementBody>Return shared equipment to its marked storage area after your session and report any damage to your trainer.</announcementBody>
+            </announcement>
+            <announcement id="announcement-support">
+                <announcementTitle>Questions about your membership?</announcementTitle>
+                <announcementBody>
+                    <paragraph>Speak to reception about your plan or ask a trainer for advice <em>before booking a new class</em>.</paragraph>
+                </announcementBody>
+            </announcement>
+        </announcements>
+        <guides>
+            <guide id="guide-check-in" resource="classCheckIn" format="plainText">
+                <guideTitle>Class check-in guide</guideTitle>
+                <guideDescription>Arrival times, reservations and checking in at reception.</guideDescription>
+            </guide>
+            <guide id="guide-equipment" resource="sharedEquipment">
+                <guideTitle>Shared equipment guide</guideTitle>
+                <guideDescription>Collecting, returning and reporting problems with shared equipment.</guideDescription>
+            </guide>
+        </guides>
+    </memberDesk>
 </gym>

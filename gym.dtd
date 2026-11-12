@@ -1,9 +1,13 @@
-<!-- PowerFit Gym: DTD 1.1. XML 1.0 / XSLT 1.0 compatible. -->
-<!-- General entities demonstrate reusable text content. -->
+<!-- PowerFit Gym vocabulary. -->
+<!-- Text entities and media declarations. -->
+<!ENTITY % inline "(#PCDATA|em|strong)*">
 <!ENTITY gymSlogan "Train Strong. Live Well.">
+<!ENTITY frontDesk SYSTEM "resources/front-desk.ent">
+<!ENTITY % gymMedia SYSTEM "gym-media.dtd">
+%gymMedia;
 
-<!-- Main document: ordered sections, one optional contact section. -->
-<!ELEMENT gym (name, tagline, location, contact?, membershipPlans, trainers, rooms, members, classes, schedule)>
+<!-- Gym details, collections, and optional member desk. -->
+<!ELEMENT gym (name, tagline, location, contact?, membershipPlans, trainers, rooms, members, classes, schedule, memberDesk?)>
 <!ATTLIST gym version CDATA #FIXED "1.1">
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT tagline (#PCDATA)>
@@ -15,7 +19,7 @@
 <!ELEMENT email (#PCDATA)>
 <!ELEMENT phone (#PCDATA)>
 
-<!-- Membership plans; some features can be limitations. -->
+<!-- Membership plans and access conditions. -->
 <!ELEMENT membershipPlans (plan+)>
 <!ELEMENT plan (planName, monthlyPrice, features)>
 <!ATTLIST plan id ID #REQUIRED
@@ -39,13 +43,15 @@
 <!-- Rooms and facilities. -->
 <!ELEMENT rooms (room+)>
 <!ELEMENT room (roomName, capacity, amenities?)>
-<!ATTLIST room id ID #REQUIRED type (studio|weights|functional|cycling) #REQUIRED>
+<!ATTLIST room id ID #REQUIRED
+               type (studio|weights|functional|cycling) #REQUIRED
+               code NMTOKEN #IMPLIED>
 <!ELEMENT roomName (#PCDATA)>
 <!ELEMENT capacity (#PCDATA)>
 <!ELEMENT amenities (amenity+)>
 <!ELEMENT amenity (#PCDATA)>
 
-<!-- Member's plan reference points to a plan ID. -->
+<!-- Member details and subscription references. -->
 <!ELEMENT members (member+)>
 <!ELEMENT member (fullName, age, email, phone?, joinedOn, emergencyContact?)>
 <!ATTLIST member id ID #REQUIRED
@@ -53,23 +59,24 @@
                  status (active|paused|cancelled) "active">
 <!ELEMENT age (#PCDATA)>
 <!ELEMENT joinedOn (#PCDATA)>
-<!-- Demonstrates a genuine choice: emergency phone OR emergency email. -->
+<!-- Emergency contacts provide either a phone number or an email address. -->
 <!ELEMENT emergencyContact (fullName, (phone|email))>
 
-<!-- Class references a trainer; equipment is optional and repeatable. -->
+<!-- Class references a trainer, equipment is optional and repeatable. -->
 <!ELEMENT classes (class+)>
 <!ELEMENT class (className, durationMinutes, description, equipment*)>
 <!ATTLIST class id ID #REQUIRED
                 trainerRef IDREF #REQUIRED
                 level (beginner|intermediate|advanced) #REQUIRED
-                category (yoga|strength|cardio|cycling|mobility) #REQUIRED>
+                category (yoga|strength|cardio|cycling|mobility) #REQUIRED
+                tags NMTOKENS #IMPLIED>
 <!ELEMENT className (#PCDATA)>
 <!ELEMENT durationMinutes (#PCDATA)>
 <!ATTLIST durationMinutes unit (minutes) #FIXED "minutes">
-<!ELEMENT description (#PCDATA)>
+<!ELEMENT description %inline;>
 <!ELEMENT equipment (#PCDATA)>
 
-<!-- Weekly sessions; an empty registration element stores a list of member IDs. -->
+<!-- Weekly sessions and registrations. -->
 <!ELEMENT schedule (session+)>
 <!ELEMENT session (startTime, endTime, registrations?, note?)>
 <!ATTLIST session id ID #REQUIRED
@@ -80,4 +87,26 @@
 <!ELEMENT endTime (#PCDATA)>
 <!ELEMENT registrations EMPTY>
 <!ATTLIST registrations memberRefs IDREFS #REQUIRED>
-<!ELEMENT note (#PCDATA)>
+<!ELEMENT note %inline;>
+
+<!-- Member announcements and guide catalogue. -->
+<!ELEMENT memberDesk (announcements, guides)>
+<!ELEMENT announcements (announcement+)>
+<!ELEMENT announcement (announcementTitle, announcementBody)>
+<!ATTLIST announcement id ID #REQUIRED attachments ENTITIES #IMPLIED>
+<!ELEMENT announcementTitle (#PCDATA)>
+<!-- ANY permits text and any declared elements, including paragraphs and checklists. -->
+<!ELEMENT announcementBody ANY>
+<!ELEMENT guides (guide+)>
+<!ELEMENT guide (guideTitle, guideDescription?)>
+<!ATTLIST guide id ID #REQUIRED
+                resource ENTITY #REQUIRED
+                format NOTATION (plainText) "plainText">
+<!ELEMENT guideTitle (#PCDATA)>
+<!ELEMENT guideDescription (#PCDATA)>
+<!-- Inline markup in text fields. -->
+<!ELEMENT paragraph %inline;>
+<!ELEMENT em (#PCDATA)>
+<!ELEMENT strong (#PCDATA)>
+<!ELEMENT checklist (item+)>
+<!ELEMENT item %inline;>

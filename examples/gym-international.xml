@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gym.xsl"?>
+<!DOCTYPE gym SYSTEM "../gym.dtd" [
+    <!ENTITY % useDefaultGuides "IGNORE">
+    <!ENTITY classCheckIn SYSTEM "../resources/class-check-in.txt" NDATA plainText>
+    <!ENTITY sharedEquipment SYSTEM "../resources/shared-equipment.txt" NDATA plainText>
+]>
+<gym>
+    <name>PowerFit Harbour</name>
+    <tagline>&gymSlogan;</tagline>
+    <location>
+        <street>8 Harbour Road</street>
+        <city>Thessaloniki</city>
+    </location>
+    <contact>
+        <email>hello@harbour.powerfit.example</email>
+    </contact>
+    <membershipPlans>
+        <plan id="harbour-eur" currency="EUR" accessLevel="all">
+            <planName>Visitor EUR</planName>
+            <monthlyPrice>35.00</monthlyPrice>
+            <features>
+                <benefit>Unlimited gym and group class access</benefit>
+            </features>
+        </plan>
+        <plan id="harbour-usd" currency="USD" accessLevel="all">
+            <planName>Visitor USD</planName>
+            <monthlyPrice>45.00</monthlyPrice>
+            <features>
+                <benefit>Unlimited group class access</benefit>
+                <limitation>Personal training is billed separately</limitation>
+                <benefit>Fitness area access</benefit>
+            </features>
+        </plan>
+        <plan id="harbour-gbp" currency="GBP" accessLevel="all">
+            <planName>Visitor GBP</planName>
+            <monthlyPrice>30.00</monthlyPrice>
+            <features>
+                <benefit>Unlimited gym and group class access</benefit>
+                <limitation>Personal training is billed separately</limitation>
+                <limitation>Equipment hire is billed separately</limitation>
+            </features>
+        </plan>
+    </membershipPlans>
+    <trainers>
+        <trainer id="harbour-trainer" employment="contract">
+            <fullName>Alex Morgan</fullName>
+            <specialty>Mobility and functional training</specialty>
+            <email>alex@harbour.powerfit.example</email>
+        </trainer>
+    </trainers>
+    <rooms>
+        <room id="harbour-studio" type="studio" code="HARBOUR-1">
+            <roomName>Harbour Studio</roomName>
+            <capacity>12</capacity>
+            <amenities>
+                <amenity>Wall mirrors</amenity>
+            </amenities>
+        </room>
+        <room id="harbour-functional" type="functional">
+            <roomName>Functional Room</roomName>
+            <capacity>8</capacity>
+        </room>
+    </rooms>
+    <members>
+        <member id="harbour-elena" planRef="harbour-eur">
+            <fullName>Elena Rossi</fullName>
+            <age>29</age>
+            <email>elena@members.powerfit.example</email>
+            <joinedOn>2026-09-01</joinedOn>
+        </member>
+        <member id="harbour-noah" planRef="harbour-usd" status="active">
+            <fullName>Noah Brooks</fullName>
+            <age>34</age>
+            <email>noah@members.powerfit.example</email>
+            <joinedOn>2026-09-04</joinedOn>
+        </member>
+        <member id="harbour-olivia" planRef="harbour-gbp" status="active">
+            <fullName>Olivia Taylor</fullName>
+            <age>26</age>
+            <email>olivia@members.powerfit.example</email>
+            <joinedOn>2026-09-06</joinedOn>
+        </member>
+    </members>
+    <classes>
+        <class id="harbour-mobility" trainerRef="harbour-trainer" level="beginner" category="mobility">
+            <className>Harbour Mobility</className>
+            <durationMinutes>30</durationMinutes>
+            <description>A gentle mobility session for visitors.</description>
+        </class>
+        <class id="harbour-circuit" trainerRef="harbour-trainer" level="intermediate" category="strength" tags="circuit">
+            <className>Harbour Circuit</className>
+            <durationMinutes unit="minutes">45</durationMinutes>
+            <description>A coached circuit with <em>controlled movements</em> and rest between rounds.</description>
+            <equipment>Resistance bands</equipment>
+        </class>
+    </classes>
+    <schedule>
+        <session id="harbour-mon-mobility" classRef="harbour-mobility" roomRef="harbour-studio" day="Monday">
+            <startTime>09:00</startTime>
+            <endTime>09:30</endTime>
+            <registrations memberRefs="harbour-elena harbour-noah"/>
+        </session>
+        <session id="harbour-mon-circuit" classRef="harbour-circuit" roomRef="harbour-functional" day="Monday">
+            <startTime>10:00</startTime>
+            <endTime>10:45</endTime>
+            <registrations memberRefs="harbour-olivia"/>
+        </session>
+        <session id="harbour-fri-mobility" classRef="harbour-mobility" roomRef="harbour-studio" day="Friday">
+            <startTime>09:00</startTime>
+            <endTime>09:30</endTime>
+        </session>
+    </schedule>
+    <memberDesk>
+        <announcements>
+            <announcement id="harbour-welcome" attachments="classCheckIn">
+                <announcementTitle>Welcome, visiting members</announcementTitle>
+                <announcementBody>
+                    <paragraph>Choose the plan in your preferred billing currency. <strong>No currency conversion</strong> is applied by the dashboard.</paragraph>
+                    <checklist>
+                        <item>Read the <em>class check-in</em> guide and <strong>confirm your room</strong> before your first session.</item>
+                    </checklist>
+                </announcementBody>
+            </announcement>
+        </announcements>
+        <guides>
+            <guide id="harbour-check-in" resource="classCheckIn">
+                <guideTitle>Class check-in</guideTitle>
+            </guide>
+        </guides>
+    </memberDesk>
+</gym>

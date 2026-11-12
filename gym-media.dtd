@@ -1,0 +1,9 @@
+<!-- Media declarations are loaded as an external parameter entity by gym.dtd. -->
+<!NOTATION plainText PUBLIC "text/plain">
+
+<!-- An internal XML subset may set this to IGNORE and supply replacement entities. -->
+<!ENTITY % useDefaultGuides "INCLUDE">
+<![%useDefaultGuides;[
+<!ENTITY classCheckIn SYSTEM "resources/class-check-in.txt" NDATA plainText>
+<!ENTITY sharedEquipment SYSTEM "resources/shared-equipment.txt" NDATA plainText>
+]]>

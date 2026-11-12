@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../gym.xsl"?>
+<!DOCTYPE gym SYSTEM "../gym.dtd">
+<gym>
+    <name>PowerFit Training Room</name>
+    <tagline>&gymSlogan;</tagline>
+    <location>
+        <street>12 Park Street</street>
+        <city>Thessaloniki</city>
+    </location>
+    <membershipPlans>
+        <plan id="minimal-plan" accessLevel="gym">
+            <planName>Gym Access</planName>
+            <monthlyPrice>20.00</monthlyPrice>
+            <features>
+                <benefit>Fitness area access</benefit>
+            </features>
+        </plan>
+    </membershipPlans>
+    <trainers>
+        <trainer id="minimal-trainer" employment="part-time">
+            <fullName>Sam Turner</fullName>
+            <specialty>Strength technique</specialty>
+            <email>sam@training.powerfit.example</email>
+        </trainer>
+    </trainers>
+    <rooms>
+        <room id="minimal-room" type="weights">
+            <roomName>Training Room</roomName>
+            <capacity>6</capacity>
+        </room>
+    </rooms>
+    <members>
+        <member id="minimal-member" planRef="minimal-plan">
+            <fullName>Robin Ellis</fullName>
+            <age>31</age>
+            <email>robin@members.powerfit.example</email>
+            <joinedOn>2026-08-15</joinedOn>
+        </member>
+    </members>
+    <classes>
+        <class id="minimal-class" trainerRef="minimal-trainer" level="beginner" category="strength">
+            <className>Strength Basics</className>
+            <durationMinutes>30</durationMinutes>
+            <description>Introduction to safe lifting technique.</description>
+        </class>
+    </classes>
+    <schedule>
+        <session id="minimal-session" classRef="minimal-class" roomRef="minimal-room" day="Sunday">
+            <startTime>11:00</startTime>
+            <endTime>11:30</endTime>
+        </session>
+    </schedule>
+</gym>
