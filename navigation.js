@@ -5,6 +5,7 @@
 
   const header = document.querySelector(".site-header");
   if (!header) return;
+  const root = document.documentElement;
 
   const entries = Array.from(header.querySelectorAll('nav a[href^="#"]'))
     .map((link) => ({ link, section: document.getElementById(link.hash.slice(1)) }))
@@ -12,20 +13,26 @@
 
   if (!entries.length) return;
 
+  function updateHeaderHeight() {
+    root.style.setProperty("--header-height", `${header.getBoundingClientRect().height}px`);
+    scheduleUpdate();
+  }
+
   function updateActive() {
-    // The activation line follows the sticky header's real height, even on mobile.
-    const activationLine = header.getBoundingClientRect().bottom + 24;
+    // Use the same padding and target margin as the browser's anchor alignment.
+    const activationLine = parseFloat(getComputedStyle(root).scrollPaddingTop);
     let active = entries[0];
 
     for (const entry of entries) {
-      if (entry.section.getBoundingClientRect().top <= activationLine) {
+      const targetMargin = parseFloat(getComputedStyle(entry.section).scrollMarginTop) || 0;
+      if (entry.section.getBoundingClientRect().top - targetMargin <= activationLine + 1) {
         active = entry;
       }
     }
 
     // On the last screen, select the final section even if its top
     // cannot reach the activation line because the document ends.
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 3) {
+    if (window.innerHeight + window.scrollY >= root.scrollHeight - 3) {
       active = entries[entries.length - 1];
     }
 
@@ -45,12 +52,15 @@
   }
 
   window.addEventListener("scroll", scheduleUpdate, { passive: true });
-  window.addEventListener("resize", scheduleUpdate);
+  window.addEventListener("resize", updateHeaderHeight);
   window.addEventListener("hashchange", scheduleUpdate);
-  window.addEventListener("load", scheduleUpdate);
+  window.addEventListener("load", updateHeaderHeight);
+  if (typeof ResizeObserver === "function") {
+    new ResizeObserver(updateHeaderHeight).observe(header);
+  }
   header.querySelectorAll('nav a[href^="#"]').forEach((link) => {
     link.addEventListener("click", () => {
-      // Give visual feedback immediately; scrolling then synchronizes it.
+      // Give visual feedback immediately. Scrolling then synchronizes it.
       for (const entry of entries) {
         const selected = entry.link === link;
         entry.link.classList.toggle("is-active", selected);
@@ -59,5 +69,5 @@
       }
     });
   });
-  scheduleUpdate();
+  updateHeaderHeight();
 })();

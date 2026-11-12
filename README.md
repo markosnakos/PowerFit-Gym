@@ -5,6 +5,7 @@ PowerFit Gym turns XML data into a responsive HTML dashboard for browsing gym re
 ## Contents
 
 - [Dashboard features](#dashboard-features)
+  - [Navigation](#navigation)
 - [Project files](#project-files)
 - [Setup and preview](#setup-and-preview)
   - [Preview the dashboard](#preview-the-dashboard)
@@ -26,6 +27,10 @@ PowerFit Gym turns XML data into a responsive HTML dashboard for browsing gym re
 - **Member desk:** reception announcements and text guides.
 - **Linked records:** names lead to the corresponding entries, which are highlighted when selected.
 
+### Navigation
+
+The menu stays at the top of the screen while scrolling. `navigation.js` highlights the current section and must be kept next to `gym.html`.
+
 ## Project files
 
 | File | Purpose |
@@ -36,6 +41,7 @@ PowerFit Gym turns XML data into a responsive HTML dashboard for browsing gym re
 | [`gym.xsl`](gym.xsl) | XSLT 1.0 transformation from XML to HTML. |
 | [`gym.html`](gym.html) | Generated dashboard, ready to open in a browser. |
 | [`style.css`](style.css) | Page styling and responsive layouts. |
+| [`navigation.js`](navigation.js) | Highlights the current section in the menu. |
 | [`transform.py`](transform.py) | DTD validation, reference checks and HTML generation with Python. |
 | [`resources/`](resources/) | Announcement fragment and text guides. |
 | [`examples/`](examples/) | Two additional XML datasets demonstrating valid variations. |
@@ -46,7 +52,7 @@ Viewing the supplied dashboard requires a web browser. To regenerate it, use eit
 
 ### Preview the dashboard
 
-Open `gym.html` in your browser. Keep it next to `style.css`, with the complete `resources/` directory beside it, so the styles and guide links load correctly.
+Open `gym.html` in your browser. Keep it next to `style.css` and `navigation.js`, with the complete `resources/` directory beside it, so styling, navigation and guide links load correctly. Include these files and directories when packaging the project for submission.
 
 ### Generate with Python
 
@@ -77,7 +83,7 @@ The script validates `gym.xml`, loads DTD defaults and external parsed content, 
 3. With `gym.xml` active, run **XSL/XQuery > XSL Transformation** (F10) using the built-in Altova XSLT engine. The XML references `gym.xsl`. Select that file if prompted.
 4. Save the result as `gym-xmlspy.html` in the project root, next to `gym.html` and `style.css`.
 5. For the internal preview, select **Microsoft Edge WebView2** under **Tools > Options > View > Browser engine**, then select **Browser** on the saved HTML document.
-6. Compare `gym-xmlspy.html` and `gym.html` in the same browser at the same width and zoom. Check the layout, record counts, schedule order, EUR 36.75 average and record/guide links.
+6. Compare `gym-xmlspy.html` and `gym.html` in the same browser at the same width and zoom. Check the layout, record counts, schedule order, EUR 36.75 average, record/guide links and navigation.
 
 The XMLSpy and Python outputs have been checked for matching content and appearance.
 
@@ -117,7 +123,7 @@ The `.ent` fragment becomes part of the generated page. The `.txt` guides remain
 
 Both examples use the same DTD and stylesheet as `gym.xml`. They are independent datasets with separate totals.
 
-Use the [XMLSpy procedure](#altova-xmlspy) for either example. Save its generated HTML in the **project root**, for example as `gym-international.html`, so the CSS and guide links resolve correctly. `transform.py` processes the main `gym.xml` only.
+Use the [XMLSpy procedure](#altova-xmlspy) for either example. Save its generated HTML in the **project root**, for example as `gym-international.html`, so the CSS, navigation script and guide links resolve correctly. `transform.py` processes the main `gym.xml` only.
 
 ## Updating the project
 
@@ -129,5 +135,6 @@ Use the [XMLSpy procedure](#altova-xmlspy) for either example. Save its generate
 | Reception announcement | `resources/front-desk.ent` | Validate and regenerate the HTML. |
 | Text of a linked guide | Its `.txt` file in `resources/` | Reopen the guide. |
 | Colours, typography or layout | `style.css` | Refresh the dashboard. |
+| Menu behaviour | `navigation.js` | Refresh the dashboard. |
 
 Treat `gym.html` as generated output. Edit the source XML or XSLT and regenerate it to keep changes reproducible.

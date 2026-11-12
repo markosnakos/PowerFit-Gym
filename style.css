@@ -906,8 +906,7 @@ a:focus-visible {
 }
 
 
-/* Quality-of-life improvement: persistent navigation.
-   CSS-only: no changes to XML, DTD, XSLT, or generated HTML. */
+/* Persistent navigation. JavaScript measures its height for anchor spacing. */
 .site-header {
   position: sticky;
   top: 0;
@@ -917,14 +916,15 @@ a:focus-visible {
   backdrop-filter: blur(12px);
 }
 
-/* Prevent anchor destinations from being hidden behind the navigation. */
+/* Measured height follows wrapped navigation. Fallbacks also allow anchor use
+   without JavaScript. Individual targets retain their scroll-margin-top. */
 html {
-  scroll-padding-top: 110px;
+  scroll-padding-top: calc(var(--header-height, 220px) + 12px);
 }
 
 @media (max-width: 680px) {
   html {
-    scroll-padding-top: 180px;
+    scroll-padding-top: calc(var(--header-height, 240px) + 12px);
   }
 }
 
